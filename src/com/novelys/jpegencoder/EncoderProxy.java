@@ -142,8 +142,7 @@ public class EncoderProxy extends KrollProxy {
 	
 			resizedBitmap.compress(CompressFormat.JPEG, compressionQuality, bos);
 	
-			imageBlob = TiBlob.blobFromData(imageBlob.getTiContext(), bos.toByteArray(),
-					"image/jpeg");
+			imageBlob = TiBlob.blobFromData(bos.toByteArray(), "image/jpeg");
 		} else {
 			encode();
 		}
@@ -178,8 +177,7 @@ public class EncoderProxy extends KrollProxy {
 				byteArray.length);
 		bm.compress(CompressFormat.JPEG, compressionQuality, bos);
 
-		imageBlob = TiBlob.blobFromData(imageBlob.getTiContext(), bos.toByteArray(),
-				"image/jpeg");
+		imageBlob = TiBlob.blobFromData(bos.toByteArray(), "image/jpeg");
 	}
 
 	@Kroll.getProperty
